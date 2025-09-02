@@ -9,7 +9,7 @@ export default function GlassCard({
   title,
   className = "",
   children,
-}: PropsWithChildren<GlassCardProps>): JSX.Element {
+}: PropsWithChildren<GlassCardProps>) {
   return (
     <section
       className={`

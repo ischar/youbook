@@ -1,6 +1,6 @@
 import GlassCard from "../components/GlassCard";
 
-export default function MainPage(): JSX.Element {
+export default function MainPage() {
   return (
     <div className="mx-auto w-full max-w-7xl px-4 md:px-8 py-4 md:py-6">
       <div className="mb-6 flex items-center gap-3">
