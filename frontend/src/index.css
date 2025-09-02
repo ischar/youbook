@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* 커스텀 애니메이션 (맥박) */
+@theme {
+  --animate-pulse-smooth: pulse-smooth 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse-smooth {
+  0%   { transform: scale(1);    opacity: 1; }
+  50%  { transform: scale(1.35); opacity: 0.62; }
+  100% { transform: scale(1);    opacity: 1; }
+}
+
+:root {
+  --dot-color: rgba(255,255,255,0.55);
+  --dot-size: 1px;
+  --dot-space: 18px;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(var(--dot-color) var(--dot-size), transparent var(--dot-size));
+  background-size: var(--dot-space) var(--dot-space);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 40%, black 70%, transparent 100%);
+          mask-image: radial-gradient(ellipse at 50% 40%, black 70%, transparent 100%);
+  opacity: .35;
+}
